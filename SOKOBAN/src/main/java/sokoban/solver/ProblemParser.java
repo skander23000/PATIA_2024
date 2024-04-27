@@ -12,15 +12,30 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * Un parser d'un problème en format JSON vers en format PDDL
+ * pour ce qui pourrait être résolu par un planner de PDDL
+ */
 public class ProblemParser {
 
+    /**
+     * Transformer JSON en PDDL
+     * @param json_file  fichier de test en JSON
+     * @param pddl_file  fichier de sorti en PDDL
+     */
     public void parse(String json_file, String pddl_file) {
-        File file = new File(System.getProperty("user.dir")).toPath().resolve("config/" + json_file).toFile();
+        File test_file = new File(System.getProperty("user.dir")).toPath()
+                .resolve("config/" + json_file).toFile();
 
-        TestCase testCase = loadTestCase(file);
+        // lire les données de JSON dans une structure
+        TestCase testCase = loadTestCase(test_file);
         if (testCase.getTestIn() == null) {
             throw new RuntimeException("Cannot find \"testIn\" property");
         }
+
+        /*
+         * Construction de PDDL
+         */
 
         // map title
         String title = FilenameUtils.getBaseName(pddl_file);//testCase.title.get(2);
@@ -34,10 +49,13 @@ public class ProblemParser {
         //System.out.println("nb_rows:"+nb_rows+", nb_cols:"+nb_cols);
 
         StringBuilder buffer = new StringBuilder();
+
         // define
         buffer.append("(define (problem sokoban-").append(title).append(")\n");
+
         // domain
         buffer.append("(:domain sokoban)\n");
+
         // objects
         buffer.append("(:objects\n");
         for(int row=0; row<nb_rows; row++){
@@ -51,16 +69,20 @@ public class ProblemParser {
         buffer.append("(:init ");
         for(int row=0; row<nb_rows; row++){
             for(int col=0; col<nb_cols-1; col++){
-                buffer.append("(on-left ").append(getCaseName(row, col)).append(" ").append(getCaseName(row, col+1)).append(") ");
-                buffer.append("(on-right ").append(getCaseName(row, col+1)).append(" ").append(getCaseName(row, col)).append(") ");
+                buffer.append("(on-left ").append(getCaseName(row, col)).append(" ")
+                        .append(getCaseName(row, col+1)).append(") ");
+                buffer.append("(on-right ").append(getCaseName(row, col+1)).append(" ")
+                        .append(getCaseName(row, col)).append(") ");
             }
             buffer.append('\n');
         }
 
         for(int row=0; row<nb_rows-1; row++){
             for(int col=0; col<nb_cols; col++){
-                buffer.append("(on-top ").append(getCaseName(row, col)).append(" ").append(getCaseName(row+1, col)).append(") ");
-                buffer.append("(on-down ").append(getCaseName(row+1, col)).append(" ").append(getCaseName(row, col)).append(") ");
+                buffer.append("(on-top ").append(getCaseName(row, col)).append(" ")
+                        .append(getCaseName(row+1, col)).append(") ");
+                buffer.append("(on-down ").append(getCaseName(row+1, col)).append(" ")
+                        .append(getCaseName(row, col)).append(") ");
             }
             buffer.append('\n');
         }
@@ -125,6 +147,7 @@ public class ProblemParser {
 
         //System.out.println(buffer);
 
+        // écrire les données dans un fichier PDDL
         File outFile = new File(pddl_file);
         try {
             FileWriter writer = new FileWriter(outFile);
@@ -152,6 +175,9 @@ public class ProblemParser {
         return testCase;
     }
 
+    /**
+     * Structure pour un fichier de test en JSON
+     */
     public static class TestCase {
         private Map<Integer, String> title;
         private String testIn;
