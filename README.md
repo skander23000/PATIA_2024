@@ -17,6 +17,7 @@ chmod +x run_project.sh
 ./run_project.sh nom_du_test
 (exemple : ./run_project.sh test15)
 ```
+Consultez "http://localhost:8888/test.html"
 
 # SAT-Planner
 
