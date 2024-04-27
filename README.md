@@ -6,16 +6,18 @@ Pour lancer les exercices :
 cd EXERCICE_PDDL
 
 chmod +x run_exercice.sh
-./run_exercice.sh nom_de_dossier_du_probleme
-(exemple : /run_exercice.sh Graph-Coloring)
+
+./run_exercice.sh <nom_de_dossier_du_probleme> 
+# exemple: ./run_exercice.sh Graph-Coloring
 ```
 # Sokoban
 ```bash
 cd SOKOBAN
 
 chmod +x run_project.sh
-./run_project.sh nom_du_test
-(exemple : ./run_project.sh test15)
+
+./run_project.sh <nom_du_test>
+# exemple: ./run_project.sh test15
 ```
 Ensuite, vous pouvez consulter la page : "http://localhost:8888/test.html"
 
@@ -26,6 +28,7 @@ Ensuite, vous pouvez consulter la page : "http://localhost:8888/test.html"
 cd SAT_Planner
 
 chmod +x compile.sh
+
 ./compile.sh
 ```
 ## Execution
@@ -38,6 +41,7 @@ chmod +x compile.sh
  
 ```bash
 chmod +x benchmarks.sh
+
 ./benchmarks.sh
 ```
 
