@@ -1,7 +1,16 @@
 #!/bin/bash
 
+echo "Installation de la dépendance locale pddl4j dans le référentiel Maven local..."
+mvn install:install-file \
+    -Dfile=./libs/fr/uga/pddl4j/4.0.0/pddl4j-4.0.0.jar \
+    -DpomFile=./libs/fr/uga/pddl4j/4.0.0/pddl4j-4.0.0.pom
+if [ $? -ne 0 ]; then
+    echo "L'installation de la dépendance locale a échoué."
+    exit 1
+fi
 
 echo "Lancement des commandes Maven..."
+
 mvn clean
 if [ $? -ne 0 ]; then
     echo "La commande mvn clean a échoué."
@@ -20,7 +29,8 @@ if [ $? -ne 0 ]; then
     exit 1
 fi
 
-mvn package
+echo "Forçage de la mise à jour des dépendances..."
+mvn -U package
 if [ $? -ne 0 ]; then
     echo "La commande mvn package a échoué."
     exit 1
