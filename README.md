@@ -4,6 +4,7 @@ Pour lancer les exercices :
 
 ```bash
 cd EXERCICE_PDDL
+
 chmod +x run_exercice.sh
 ./run_exercice.sh nom_de_dossier_du_probleme
 (exemple : /run_exercice.sh Graph-Coloring)
@@ -11,6 +12,7 @@ chmod +x run_exercice.sh
 # Sokoban
 ```bash
 cd SOKOBAN
+
 chmod +x run_project.sh
 ./run_project.sh nom_du_test
 (exemple : ./run_project.sh test15)
@@ -24,7 +26,6 @@ cd SAT_Planner
 
 chmod +x compile.sh
 ./compile.sh
-./benchmarks.sh
 ```
 ## Execution
  Tout les graphes sont deja génère (par nombre d'étape et temps de recherche) dans ```gnuplot/```, les problèmes sont trié sur l'axe x en fonction des performance de HSP.
