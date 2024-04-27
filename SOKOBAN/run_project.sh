@@ -1,7 +1,5 @@
 #!/bin/bash
 
-# Naviguez au répertoire de votre projet Maven si nécessaire
-# cd /chemin/vers/votre/projet
 
 echo "Lancement des commandes Maven..."
 mvn clean
