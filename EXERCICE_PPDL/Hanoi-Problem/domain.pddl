@@ -63,7 +63,28 @@
         :effect (and
             (not (holding ?x))
             (clear ?x)
-            (handempty))
+            (handempty)
+            (onrod1 ?x))
+    )
+    
+    (:action put-on-rod2  ; Action pour placer un disque sur la tige 2.
+        :parameters (?x - disk)
+        :precondition (and (holding ?x))  ; La main doit tenir un disque.
+        :effect (and
+            (not (holding ?x))
+            (clear ?x)
+            (handempty)
+            (onrod2 ?x))
+    )
+    
+    (:action put-on-rod3  ; Action pour placer un disque sur la tige 3.
+        :parameters (?x - disk)
+        :precondition (and (holding ?x))  ; La main doit tenir un disque.
+        :effect (and
+            (not (holding ?x))
+            (clear ?x)
+            (handempty)
+            (onrod3 ?x))
     )
 
     (:action unstack  ; Action pour retirer un disque d'un autre.
