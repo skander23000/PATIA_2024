@@ -39,8 +39,10 @@ cd SAT_Planner
 ```
 
 
-## Resultat
+## Resultats
  
+ Sur les graphes du runtime, si la courbe de HSP n'est pas visible c'est quelle est beaucoup plus petite (0,01~0.05 sec).
+
  Un problème dans notre planner fait qu'il accepte dans certains cas des solutions fausse, ce qui construit un plan plus court que HSP. 
  
 
