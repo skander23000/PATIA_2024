@@ -11,7 +11,7 @@
     )
 
 
-:EXPLICATION DES ACTIONS :
+;EXPLICATION DES ACTIONS :
 ;pick-up : Cette action est utilisée pour prendre un bloc libre sur la table. Elle change l'état du bloc et de la main.
 ;put-down : Permet de poser un bloc tenu dans la main sur la table, libérant la main et le bloc.
 ;stack : Utilisée pour empiler un bloc tenu sur un autre bloc libre. Elle nécessite que la main tienne un bloc et que le bloc cible soit libre.
