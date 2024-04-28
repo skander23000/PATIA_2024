@@ -19,8 +19,3 @@ Tous les autres scripts qui ne sont pas indiqués ici (.py et .sh) sont des scri
  - Génère tout les graphes(par nombre d'étape et temps de recherche) dans ```gnuplot/```, les problèmes sont triés sur l'axe x en fonction des performance de HSP.
  
 
-
-
- # Resultat
- 
- Un problème dans notre planner fait qu'il accepte dans certains cas des solutions fausses, ce qui construit un plan plus court que HSP. 

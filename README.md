@@ -1,11 +1,10 @@
 # PATIA_2024
+
 # Exercices
 Pour lancer les exercices : 
 
 ```bash
 cd EXERCICE_PDDL
-
-chmod +x run_exercice.sh
 
 ./run_exercice.sh <nom_de_dossier_du_probleme> 
 # exemple: ./run_exercice.sh Graph-Coloring
@@ -13,8 +12,6 @@ chmod +x run_exercice.sh
 # Sokoban
 ```bash
 cd SOKOBAN
-
-chmod +x run_project.sh
 
 ./run_project.sh <nom_du_test>
 # exemple: ./run_project.sh test15
@@ -27,8 +24,6 @@ Ensuite, vous pouvez consulter la page : "http://localhost:8888/test.html"
 ```bash
 cd SAT_Planner
 
-chmod +x compile.sh
-
 ./compile.sh
 ```
 ## Execution
@@ -40,8 +35,6 @@ chmod +x compile.sh
  (Le temps de recherche sur notre planner est indiqué à la ligne 13 des logs "Temps de recherche : XXX".)
  
 ```bash
-chmod +x benchmarks.sh
-
 ./benchmarks.sh
 ```
 

@@ -11,12 +11,6 @@ pathgripper="gripper/"
 pathlogistics="logistics-round1/"
 
 
-nbpb_blocks=102
-nbpb_depot=22
-nbpb_gripper=20
-nbpb_logistics=20
-
-
 
 pddl4j="java -server -Xms4096m -Xmx4096m -cp ./libs/pddl4j-4.0.0.jar fr.uga.pddl4j.planners.statespace."
 HSP="HSP"
@@ -42,10 +36,6 @@ nbStepMax=500
 #mkdir depot 
 #mkdir logistics
 #cd ..
-
-
-
-
 
 
 
