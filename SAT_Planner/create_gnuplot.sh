@@ -50,7 +50,7 @@ for BATCH in "${BATCHES[@]}"; do
     echo "set linetypes 2 lc rgb 'blue' " >> gnuplot_script_$BATCH\_$type
     echo "set logscale yr" >> gnuplot_script_$BATCH\_$type
     echo "plot 'data/$BATCH/$data_hsp.dat' using 0:2:xticlabels(1) with lines linetype 1 title \"HSP\", \
-        'data/$BATCH/$data_maison.dat' using 0:2:xticlabels(1) with lines linetype 2" title \"Maison\" >> gnuplot_script_$BATCH\_$type
+        'data/$BATCH/$data_maison.dat' using 0:2:xticlabels(1) with lines linetype 2" title \"SAT\" >> gnuplot_script_$BATCH\_$type
 
     gnuplot gnuplot_script_$BATCH\_$type
     rm gnuplot_script_$BATCH\_$type
