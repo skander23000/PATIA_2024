@@ -49,7 +49,7 @@ for problm in "$pathRess$pathlogistics"p*; do
         $solverHSP $pathRess$pathlogistics$dom $problm > logs_benchmarks/logistics/HSP_$(basename $problm) &
         echo
         cd classes
-        $solverMaison "."$pathRess$pathlogistics$dom "."$problm $nbStepMax > "../"logs_benchmarks/logistics/Maison_$(basename $problm)
+        $solverMaison "."$pathRess$pathlogistics$dom "."$problm $nbStepMax > "../"logs_benchmarks/logistics/SAT_$(basename $problm)
         cd ..
     fi
 done
@@ -67,7 +67,7 @@ for problm in "$pathRess$pathblocks"p*; do
         echo
         cd classes
         # shellcheck disable=SC2046
-        $solverMaison "."$pathRess$pathblocks$dom "."$problm $nbStepMax > "../"logs_benchmarks/blocks/Maison_$(basename "$problm") 
+        $solverMaison "."$pathRess$pathblocks$dom "."$problm $nbStepMax > "../"logs_benchmarks/blocks/SAT_$(basename "$problm") 
         cd ..
     fi
 done
@@ -82,7 +82,7 @@ for problm in "$pathRess$pathgripper"p*; do
         $solverHSP $pathRess$pathgripper$dom $problm > logs_benchmarks/gripper/HSP_$(basename $problm)
         echo
         cd classes
-        $solverMaison "."$pathRess$pathgripper$dom "."$problm $nbStepMax > "../"logs_benchmarks/gripper/Maison_$(basename $problm)
+        $solverMaison "."$pathRess$pathgripper$dom "."$problm $nbStepMax > "../"logs_benchmarks/gripper/SAT_$(basename $problm)
         cd ..
     fi
 done
@@ -97,7 +97,7 @@ for problm in "$pathRess$pathdepot"p*; do
         $solverHSP $pathRess$pathdepot$dom $problm > logs_benchmarks/depot/HSP_$(basename $problm) &
         echo
         cd classes
-        $solverMaison "."$pathRess$pathdepot$dom "."$problm $nbStepMax > "../"logs_benchmarks/depot/Maison_$(basename $problm)
+        $solverMaison "."$pathRess$pathdepot$dom "."$problm $nbStepMax > "../"logs_benchmarks/depot/SAT_$(basename $problm)
         cd ..
     fi
 done
